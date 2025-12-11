@@ -13,17 +13,20 @@ namespace ARLb1
         {
             try
             {
-                Console.WriteLine("=== Ввод персоны с клавиатуры ===");
-                var person = Person.ReadFromConsole();
-                Console.WriteLine("\n→ Введённая персона:");
-                person.Display();
+                Console.WriteLine("=== Генерация 5 случайных персон ===");
+                var list = new PersonList();
+                for (int i = 0; i < 5; i++)
+                {
+                    var person = Person.GetRandomPerson();
+                    list.Add(person);
+                    Console.WriteLine($"{i + 1}: {person}");
+                }
 
-                Console.WriteLine("\n(Нажмите любую клавишу для выхода...)");
-                Console.ReadKey();
+                Console.Read();
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"\n❌ Ошибка ввода: {ex.Message}");
+                Console.WriteLine($"❌ Ошибка: {ex.Message}");
                 Console.Read();
             }
         }
