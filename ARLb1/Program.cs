@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace ARLb1
 {
+    //TODO: RSDN
     class Program
     {
+        //TODO: RSDN
         static void Main(string[] args)
         {
             try
@@ -24,6 +26,7 @@ namespace ARLb1
 
                 Console.Read();
             }
+            //TODO: RSDN
             catch (Exception ex)
             {
                 Console.WriteLine($"❌ Ошибка: {ex.Message}");

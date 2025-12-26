@@ -13,6 +13,7 @@ namespace ARLb1
     public class PersonList
     {
         // Инкапсулируем внутренний список — он не виден снаружи
+        //TODO: XML
         private readonly List<Person> _persons = new List<Person>();
 
         /// <summary>
@@ -36,6 +37,7 @@ namespace ARLb1
         /// <returns>True, если персона была найдена и удалена; иначе false.</returns>
         public bool Remove(Person person)
         {
+            //TODO: {}
             if (person == null)
                 return false;
             return _persons.Remove(person);
@@ -48,7 +50,9 @@ namespace ARLb1
         /// <exception cref="ArgumentOutOfRangeException">Если индекс вне диапазона.</exception>
         public void RemoveAt(int index)
         {
+            //TODO: {}
             if (index < 0 || index >= _persons.Count)
+                //TODO: RSDN
                 throw new ArgumentOutOfRangeException(nameof(index), "Индекс выходит за пределы списка.");
             _persons.RemoveAt(index);
         }
@@ -61,7 +65,9 @@ namespace ARLb1
         /// <exception cref="ArgumentOutOfRangeException">Если индекс вне диапазона.</exception>
         public Person Get(int index)
         {
+            //TODO: {}
             if (index < 0 || index >= _persons.Count)
+                //TODO: RSDN
                 throw new ArgumentOutOfRangeException(nameof(index), "Индекс выходит за пределы списка.");
             return _persons[index];
         }

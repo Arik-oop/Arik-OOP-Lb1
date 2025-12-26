@@ -9,6 +9,7 @@ using System.Xml.Linq;
 
 namespace ARLb1
 {
+    //TODO: RSDN
         /// <summary>
         /// Класс, описывающий персону: имя, фамилию, возраст и пол.
         /// </summary>
@@ -16,15 +17,20 @@ namespace ARLb1
     {
         // === Свойства ===
 
+        //TODO: проверки?
         /// <summary>
         /// Имя персоны.
         /// </summary>
         public string Name { get; private set; }
 
+        //TODO: проверки?
+
         /// <summary>
         /// Фамилия персоны.
         /// </summary>
         public string Surname { get; private set; }
+
+        //TODO: проверки?
 
         /// <summary>
         /// Возраст персоны (должен быть >= 0).
@@ -49,6 +55,7 @@ namespace ARLb1
         /// <exception cref="ArgumentNullException">Если имя или фамилия равны null.</exception>
         public Person(string name, string surname, int age, Sex sex)
         {
+            //TODO: {}
             if (age < 0)
                 throw new ArgumentException("Возраст не может быть отрицательным.", nameof(age));
 
@@ -70,8 +77,12 @@ namespace ARLb1
         /// <exception cref="ArgumentException">Если строка пустая или содержит недопустимые символы.</exception>
         private static string EnsureCorrectName(string input)
         {
+            //TODO: {}
+
             if (string.IsNullOrWhiteSpace(input))
                 throw new ArgumentException("Имя или фамилия не могут быть пустыми.", nameof(input));
+
+            //TODO: {}
 
             // Разрешены только буквы (русские и английские) и пробелы
             if (!Regex.IsMatch(input, @"^[\p{L} ]+$"))
@@ -84,6 +95,7 @@ namespace ARLb1
 
         // === Публичные статические методы ===
 
+        //TODO: remove
         /// <summary>
         /// Считывает данные о персоне с клавиатуры.
         /// </summary>
@@ -97,6 +109,7 @@ namespace ARLb1
             string surname = Console.ReadLine();
 
             Console.Write("Введите возраст: ");
+            //TODO: {}
             if (!int.TryParse(Console.ReadLine(), out int age))
                 throw new FormatException("Возраст должен быть целым числом.");
 
@@ -104,6 +117,8 @@ namespace ARLb1
             Console.WriteLine("  0 — Мужской");
             Console.WriteLine("  1 — Женский");
             Console.Write("Ваш выбор (0/1): ");
+
+            //TODO: {}
             if (!int.TryParse(Console.ReadLine(), out int genderChoice) || genderChoice < 0 || genderChoice > 1)
                 throw new ArgumentException("Некорректный ввод пола. Используйте 0 или 1.");
 
@@ -135,6 +150,7 @@ namespace ARLb1
 
         // === Публичные методы экземпляра ===
 
+        //TODO: remove
         /// <summary>
         /// Выводит информацию о персоне на консоль.
         /// </summary>

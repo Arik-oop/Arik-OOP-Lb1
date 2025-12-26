@@ -11,7 +11,10 @@ namespace ARLb1
     /// </summary>
     public enum Sex
     {
+        //TODO: XML
         Male,
+
+        //TODO: XML
         Female
     }
 }
